@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link rel="icon" 
+      type="image/x-icon" 
+      href="images/favicon (2).ico">
+	<title>ek.kamenko</title>
+</head>
+<header class="showcase">
+	<div class="showcase-content">
+		<h1>Екатерина<br>Игоревна<br>Каменко</h1>
+		<p>Родилась 25.06.2003 в городе Несвиж</p>
+		<div class="heh">В 2020 году закончила Несвижскую гимназию<br>Если говорить про школьную жизнь, то она была насыщенной и интересной. Тогда и до сих пор мне нравилось учиться чему-то новому, неравнодушна к любым знаниям. Поэтому мне всегда нравилось ездить в г. Солигорск на олимпиады по русскому языку, участвовать в командных играх по Что? Где? Когда? и прочих турнирах.</div>
+	</div>
+</header>
+<section class="tabs">
+	<div class="container">
+		<div id="tab-1" class="tab-item tab-border">
+			<img class="huh" src="images/22.png" alt="">
+			<p class="hide-sm">Увлечения</p>
+		</div>
+		<div id="tab-2" class="tab-item">
+			<img class="huh" src="images/11.png" alt="">
+			<p class="hide-sm">Культура</p>
+		</div>
+		<div id="tab-3" class="tab-item">
+			<img class="huh" src="images/33.png" alt="">
+			<p class="hide-sm">Академия</p>
+		</div>
+	</div>
+</section>
+
+<section class="tab-content">
+	<div class="container">
+		<!-- Tab Content 1 -->
+		<div id="tab-1-content" class="tab-content-item show">
+			<div class="tab-1-content-inner">
+				<div>
+					<p class="text-lg">
+						Мне всегда нравилось творчество и искусство, поэтому с самого раннего детства я хотела учиться в музыкальной школе. И в 2018 году закончила Несвижскую детскую школу искусств по фортепианному отделению. Там мне тоже приносило удовольствие участие в конкурсах, как сольно, так и в ансамбле цимбалистов. И этот период повлиял на мое мировоззрение в дальнейшем. Сейчас я люблю любое проявление искусства либо культуры в жизни.
+					</p>
+				</div>
+				<img src="images/веч.jpg" alt="" />
+			</div>
+		</div>
+
+		<!-- Tab Content 2 -->
+		<div id="tab-2-content" class="tab-content-item">
+			<div class="tab-2-content-top">
+				<p class="text-lg">
+					Поэтому с уверенностью могу сказать, что я очень люблю свой родной город. Так как там каждый кирпичик пронизан историей. Это Замок Радзивиллов с дворцово-парковым ансамблем, Слуцкие ворота, Фарный костел (16 век), на органе которого я играла, и др.<br>Живя в Минске, восполняю культурный пробел выступлениями на бесплатных концертах, занятиях в музыкальных классах на Немиге. Сейчас никак не соберемся с мыслями пойти в Большой театр Беларуси вместе с Катей и Настей Семеновой.
+				</p>
+			</div>
+			<div class="tab-2-content-bottom">
+				<div>
+					<img src="images/P0OPwNWEycQ.jpg" alt="" />
+				</div>
+				<div>
+					<img src="images/oToWMV7LIgI.jpg" alt="" />
+				</div>
+				<div>
+					<img src="images/IMG_2986.JPG" alt="" />
+				</div>
+			</div>
+		</div>
+
+		<!-- Tab Content 3 -->
+		<div id="tab-3-content" class="tab-content-item">
+			<div class="tab-3-content-inner">
+				<img src="images/оф-дев.jpg" alt="" />
+			<div>
+				<p class="text-lgg">
+					Академия дает мне бесценный опыт во всех сферах жизни разом. Вместе учимся, преодолеваем трудности, развиваемся, расширяем кругозор, практикуем навыки и становимся лучше. Так как смысл есть в самосовершенствовании (и в соблюдении моральных норм). В любых ситуациях человек должен оставаться человеком. Без морали в голове человек – не человек.
+				</p>
+			</div>
+			</div>
+		</div>
+	</div>
+</section>
+<script>
+	const tabItems = document.querySelectorAll('.tab-item');
+const tabContentItems = document.querySelectorAll('.tab-content-item');
+
+// Select tab content item
+function selectItem(e) {
+	// Remove all show and border classes
+	removeBorder();
+	removeShow();
+	// Add border to current tab item
+	this.classList.add('tab-border');
+	// Grab content item from DOM
+	const tabContentItem = document.querySelector(`#${this.id}-content`);
+	// Add show class
+	tabContentItem.classList.add('show');
+}
+
+// Remove bottom borders from all tab items
+function removeBorder() {
+	tabItems.forEach(item => {
+		item.classList.remove('tab-border');
+	});
+}
+
+// Remove show class from all content items
+function removeShow() {
+	tabContentItems.forEach(item => {
+		item.classList.remove('show');
+	});
+}
+
+// Listen for tab item click
+tabItems.forEach(item => {
+	item.addEventListener('click', selectItem);
+});
+
+</script>
+</html>
